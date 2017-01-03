@@ -10,25 +10,65 @@
 	clc
 	jsr PLOT 	; move cursor to top
 
-	lda #$0A
-	sta CURCOL	; set cursor color
-	ldx #<text1
-	ldy #>text1
-	jsr PRINT
+	+PRINT $0A, text1	; title
+	+PRINT $0f, text2	; introduction
+	+PRINT $05, text3	; ask for name
 
-	lda #$0F
-	sta CURCOL
-	ldx #<text2
-	ldy #>text2
-	jsr PRINT
+;---------------------------------------------------------- 
+;	Player name promt
+;
+;----------------------------------------------------------
+;	read player name
+;	into 'pname'
 
-	;Ask for name
-	lda #$05
-	sta CURCOL
-	ldx #<text3
-	ldy #>text3
-	jsr PRINT
-
-	;prompt 
+!zone player_name_prompt {
+namePrompt:			;get player name 
 	lda #$07
-	sta $0286	; change cursor color to grey 
+	sta CURCOL
+
+.scan:
+	RETRN = $0D		; return key
+	DELET = $14		; delete key
+	jsr GETIN		; get char
+	cmp #00
+	beq scan
+	cmp #RETRN
+	beq .endScan
+	cmp #DELET
+	beq pname_delete 
+
+	jsr pname_add	; add char to PNAME
+	jsr CHROUT 		; print char to screen
+
+ 	jmp .scan 
+
+pname_add:
+	ldx pname_len	; get index
+	sta pname,x		; put char
+	inx 			; increase index
+	cpx #PNAME_DIM+1; compare with string size
+	beq .error
+	stx pname_len	; store increased size	
+	rts
+
+pname_delete:
+	ldx pname_len	; get index
+	cpx #00
+	beq +			; if zero quit
+	jsr CHROUT		; update screen	
+	dex				; decrease index
+	lda #00
+	sta pname,x		; erase char char
+	stx pname_len	; store increased size
++	jmp .scan
+
+.error
+	ldx #00
+	stx pname_len
+	+PRINT $02, error1
+	rts
+
+.endScan
+}
+
+	+PRINT $0f, pname

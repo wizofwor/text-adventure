@@ -11,3 +11,14 @@
 	;Music
 	music		= $1000		;Müzik dosyasinin yuklenecegi adres
 	musicPlay	= music+3	;Müzik player adresi
+
+;------------------------------------
+; Macros
+;------------------------------------
+!MACRO PRINT .color, .label {
+	lda #.color
+	sta CURCOL
+	ldx #<.label
+	ldy #>.label
+	jsr PRINT
+}

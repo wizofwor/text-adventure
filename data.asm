@@ -10,17 +10,17 @@ rowAdress:
 
 ; 	Dimentions
 
-PNAME_DIM = 24
+PNAME_DIM = 16
 INSTR_DIM = 24
 
 ; 	Memory allocations
 ;	Indexes: 
-PNAME_LEN:	!by 0
-INSTR_LEN:	!by 0
+pname_len:	!by 0
+instr_len:	!by 0
 
 ;	Data:
-PNAME:	!for i,0,PNAME_DIM {!by 0}
-INSTR:	!for i,0,INSTR_DIM {!by 0}
+pname:	!for i,0,PNAME_DIM {!by 0}
+instr:	!for i,0,INSTR_DIM {!by 0}
 
 ;---------------------------------------------------------- 
 ;	Text messages
@@ -38,7 +38,9 @@ text2:
 	!scr "LANMASI ICIN GIZEMI COZMEN GEREKLI."
 	!by 0
 text3:
-	!scr $0D,"ISMIN NEDIR?>",0	
+	!scr $0D,"ISMIN NEDIR?>",0
+error1:
+	!scr $0D,"DAHA KISA LUTFEN",0		
 
 ; --- Text Messages, end ---	
 	

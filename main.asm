@@ -14,11 +14,13 @@
   	lda #$00
  	sta counter					; initialize
  	sta blink					; counter
+ 	sta pname_len
+ 	sta instr_len
 
  	!src "setIRQ.asm"
  	!src "initScreen.asm"
 
-
+ 	dec $d020
 
  	jmp *
 
