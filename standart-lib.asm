@@ -54,6 +54,6 @@ GETIN 	= $FFE4 ; Get character from keyboard buffer.
 SCNKEY	= $FF9F	; Scan keyboard.
 PLOT	= $FFF0 ; Read/set X,Y cursor position.
 
-;STANDAR ZEROPAGE
+;STANDARD ZEROPAGE
 ;============================================================================
 CURCOL	= $0286	; Cursor color

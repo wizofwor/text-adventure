@@ -5,20 +5,13 @@
 	counter = $fb
 	blink 	= $fc
 
-	targetL	= $02
-	targetH = $03
+	temp0	= $02
+	temp1	= $03
+	temp2	= $04
+	temp3	= $05
 
 	;Music
-	music		= $1000		;Müzik dosyasinin yuklenecegi adres
-	musicPlay	= music+3	;Müzik player adresi
+	music		= $1000			; Müzik dosyasinin yuklenecegi adres
+	musicPlay	= music+3		; Müzik player adresi
 
-;------------------------------------
-; Macros
-;------------------------------------
-!MACRO PRINT .color, .label {
-	lda #.color
-	sta CURCOL
-	ldx #<.label
-	ldy #>.label
-	jsr PRINT
-}
+

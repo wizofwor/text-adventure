@@ -11,6 +11,10 @@
 
  	+SET_START $3000
 
+ 	jmp main
+ 	!src "subroutines.asm"
+
+main:
   	lda #$00
  	sta counter					; initialize
  	sta blink					; counter
@@ -20,10 +24,16 @@
  	!src "setIRQ.asm"
  	!src "initScreen.asm"
 
- 	dec $d020
+loop:
+	+PRINT $05, text5 			; ask question and 
+ 	+SCANF $05, instr 			; wait for user input
+ 	+PRINT $0A, instr 			; print user input
 
+ 	dec $d020
+ 	dec $d020
  	jmp *
+ 	jmp loop
 
  	!src "irq.asm"
- 	!src "subroutines.asm"
+ 	;!src "subroutines.asm"
  	!src "data.asm"
