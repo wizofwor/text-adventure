@@ -18,16 +18,23 @@ main:
   	lda #$00
  	sta counter					; initialize
  	sta blink					; counter
- 	sta pname_len
- 	sta instr_len
+ 	;sta pname_len
+ 	;sta instr_len
 
  	!src "setIRQ.asm"
  	!src "initScreen.asm"
 
 loop:
-	+PRINT $05, text5 			; ask question and 
- 	+SCANF $03, instr, 3		; wait for user input
- 	+PRINT $0A, instr 			; print user input
+	+PRINT $05, text5 					; ask question and 
+-	+SCANF $03, instr, INSTR_DIM		; wait for user input
+ 	+PRINT $0A, instr 					; print user input
+
+ 	+STRCMP pname, instr
+ 	bne +
+ 	inc $d020
+ 	jmp -
++ 	dec $d020
+ 	jmp -
 
  	dec $d020
  	dec $d020

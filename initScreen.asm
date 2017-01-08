@@ -13,6 +13,6 @@
 	+PRINT $0A, text1		; title
 	+PRINT $0f, text2		; introduction
 	+PRINT $05, text3	
-	+SCANF $07, pname, 4 	; ask for name
+	+SCANF $07, pname, PNAME_DIM 	; ask for name
 
 	+PRINTF $0f, text4

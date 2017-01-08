@@ -21,8 +21,8 @@ INSTR_DIM = 40
 
 ; 	Memory allocations
 ;	Indexes: 
-pname_len:	!by 0
-instr_len:	!by 0
+;pname_len:	!by 0
+;instr_len:	!by 0
 
 ;	Data:
 pname:	!for i,0,PNAME_DIM {!by 0}
@@ -84,6 +84,65 @@ vDesc3:
 	!scr "VE HAZIR KAHVE VAR."
 	!scr $0d,"-SELAM KUZEN. NE LAZIMDI?",0
 
+vDesc4:
+	; Megalux'un odası
+	!scr "MEGALUX BARDAKLARI SOGUTMUS, FLOPPYLERI "
+	!scr "HAZIRLAMIS BENI BEKLIYORMUS."
+	!scr "- SELAM %. GOZLERIM YOLLARDA KALDI."
+	!scr "ACAYIP GUZEL OYUNLARIM VAR. SU BARDAKLARI"
+	!scr "DOLDURAYIM",0
+
+vDesc6:
+	; Parti mekanı
+	!scr "PARTI MEKANI BIRAZ ISSIZ GIBI. MASALARIN"
+	!scr "BIR KACI HARICINDEKILER BOS. HENUZ MUDA-"
+	!scr "VIMLERDEN BAŞKA GELEN OLMAMIS. JONGLOR  " 
+	!scr "ITE KAKA CALISTIGI HER HALINDEN BELLI"
+	!scr "BIR BILGISAYARDA JOYSTICK ÇEVIRIYOR.    "
+	!scr "IMAGINE VE SIPSATTI BIR KOSEDE MUHABBETI"
+	!scr "DEMLEMEYE BASLAMISLAR. UNCANNY ISE HER  "
+	!scr "ZAMANKI GIBI BIR KÖSEDE PIKSELLEMEYE"
+	!scr "BASLAMIS BILE."
+	!scr "GIRISTE KAYIT MAMASINDA ORGALARDAN BIRI "
+	!scr "OTURUYOR. KARSISINDA DA KAHVE MASASI VAR.",0
+	
+vDesc7:
+	; Kahve masası
+	!scr "BURNUMA KAHVE KOKULARI GELIYOR. MASANIN "
+	!scr "UZERIDNE KAHVE MAKINESI, YENINDA KAGIT  "
+	!scr "BARDAKLAR, SEKER, KREMA VE BIR KAVANOZ  "
+	!scr "KAHVE VAR.",0
+	
+vDesc8:
+	; gizli oda
+	!scr "ZZZT... BıZZT.. O DA NE! KAHVE MASASININ"
+	!scr "ARKASINDA GIZLI BIR ODA VARMIS.         "
+	!scr "DELIFISEK BURADA. ELLERI BAGLI. NELER DONUYOR?",0
+	
+vDesc9:
+	;orga
+	!scr "X SU ANDA COK ACELEM VAR.",0
+	
+vDesc10:
+	;sipsatti
+	!scr "-VAY VAY VAY MAHMUT GELMIS.",0
+	
+vDesc11:
+	;imagine
+	!scr "-NE ZAMANDIR GORUSMUYORDUK. NE VAR NE   "
+	!scr "YOK?",0
+	
+vDesc12:
+	;uncanny(grafiker)
+	!scr "-HMM. SURAYA KAHVE RENGI, ŞURAYA KOYU   "
+	!scr "KAHVERENGI, ŞURAYA AÇIK KAHVE RENGI!",0
+		
+vDesc13:
+	;jonglör
+	!scr "MERHABA. SUPAPLEX OYNAR MISIN?",0
+
 
 ; --- Text Messages, end ---	
 	
+test:
+	!scr "TEST",0	
