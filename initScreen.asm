@@ -8,13 +8,11 @@
 	ldx #0
 	ldy #0
 	clc
-	jsr PLOT 	; move cursor to top
+	jsr PLOT 				; move cursor to top
 
-	+PRINT $0A, text1	; title
-	+PRINT $0f, text2	; introduction
-	+PRINT $05, text3	; ask for name
-
-;	jsr scann
-	+SCANF $07, pname, 4
+	+PRINT $0A, text1		; title
+	+PRINT $0f, text2		; introduction
+	+PRINT $05, text3	
+	+SCANF $07, pname, 4 	; ask for name
 
 	+PRINTF $0f, text4

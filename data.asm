@@ -44,7 +44,7 @@ text2:
 text3:
 	!scr $0d,$0d,"ISMIN NEDIR? > ",0
 text4:
-	!scr $0D,"SELAM %"
+	!scr $0d,"SELAM %"
 	!scr $0d,"UNUTMA BU GUN MEGALUX'LE BULUSACAKSIN."
 	!scr $0d,"YENI PROJESINDEN BAHSEDECEGINE SOZ VER-"
 	!scr $0d,"MISTI.",0
@@ -86,8 +86,4 @@ vDesc3:
 
 
 ; --- Text Messages, end ---	
-	
-	* = music
-	!bin "res/Enjoy_the_Silence.sid",,$7c+2
-
 	
