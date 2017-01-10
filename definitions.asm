@@ -10,5 +10,13 @@
 	temp2	= $04
 	temp3	= $05
 
+; Screen Colors
+
+	BAKGR_CLR = $00 	; Background Color
+	TITLE_CLR = $0A 	; Title Color
+	PRMPT_CLR = $05 	; Prompt Color
+	INPUT_CLR = $07 	; User Input Color
+	GTEXT_CLR = $0f 	; General Text Color	
+
 
 

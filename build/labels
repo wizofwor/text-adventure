@@ -6,8 +6,11 @@
 	COLOR_RAM	= $d800	; unused
 	GETIN	= $ffe4
 	main	= $3089	; ?
+	GTEXT_CLR	= $f
+	INPUT_CLR	= $7
 	CURCOL	= $286
 	pname	= $31ba	; ?
+	PRMPT_CLR	= $5
 	WAIT	= $32
 	SCNKEY	= $ff9f	; unused
 	printf	= $3011
@@ -58,11 +61,13 @@
 	temp1	= $3
 	temp2	= $4
 	temp3	= $5
+	BAKGR_CLR	= $0
 	instr	= $31cb	; ?
 	SCINIT	= $ff81	; unused
 	PNAME_DIM	= $10	; ?
-	VIEWS	=  ?	; unused
+	VIEWS	= $d	; unused
 	PLOT	= $fff0
+	TITLE_CLR	= $a
 	view_names	= $3393	; unused
 	CHROUT	= $ffd2
 	text5	= $3354	; ?

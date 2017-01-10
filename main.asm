@@ -16,18 +16,16 @@
 
 main:
   	lda #$00
- 	sta counter			; initialize
- 	sta blink			; counter
- 	;sta pname_len
- 	;sta instr_len
+ 	sta counter			; initialize counter
+ 	sta blink			; initilize cursor blink delay
 
  	!src "setIRQ.asm"
  	!src "initScreen.asm"
 
 loop:
-	+PRINT $05, text5 		; ask question and 
--	+SCANF $03, instr, INSTR_DIM	; wait for user input
- 	+PRINT $0A, instr 		; print user input
+	+PRINT PRMPT_CLR, text5 		; ask question and 
+-	+SCANF INPUT_CLR, instr, INSTR_DIM	; wait for user input
+ 	+PRINT GTEXT_CLR, instr 		; print user input
 
  	+STRCMP pname, instr
  	bne +
