@@ -50,7 +50,7 @@ error1:
 ; ----------------------------------------
 ; View Names
 
-VIEWS = #13
+VIEWS = 13
 
 view_names:
 vn0:	!scr"EV",0
