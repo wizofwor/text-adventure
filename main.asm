@@ -16,8 +16,8 @@
 
 main:
   	lda #$00
- 	sta counter					; initialize
- 	sta blink					; counter
+ 	sta counter			; initialize
+ 	sta blink			; counter
  	;sta pname_len
  	;sta instr_len
 
@@ -25,9 +25,9 @@ main:
  	!src "initScreen.asm"
 
 loop:
-	+PRINT $05, text5 					; ask question and 
--	+SCANF $03, instr, INSTR_DIM		; wait for user input
- 	+PRINT $0A, instr 					; print user input
+	+PRINT $05, text5 		; ask question and 
+-	+SCANF $03, instr, INSTR_DIM	; wait for user input
+ 	+PRINT $0A, instr 		; print user input
 
  	+STRCMP pname, instr
  	bne +
